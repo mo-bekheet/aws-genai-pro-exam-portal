@@ -25,11 +25,11 @@ description: Task list for Initial App Setup feature
 
 **Purpose**: Project initialization and basic structure
 
-- [ ] T001 Initialize Next.js 15 project with TypeScript and Tailwind CSS
-- [ ] T002 [P] Install dependencies: Clerk, Supabase, Framer Motion, Zustand, Recharts, React Flow, Phosphor Icons
-- [ ] T003 [P] Configure ESLint and Prettier for code quality
-- [ ] T004 Configure Tailwind CSS with design tokens from constitution
-- [ ] T005 Setup folder structure: app/, components/, lib/, hooks/, types/
+- [X] T001 Initialize Next.js 15 project with TypeScript and Tailwind CSS
+- [X] T002 [P] Install dependencies: Clerk, Supabase, Framer Motion, Zustand, Recharts, React Flow, Phosphor Icons
+- [X] T003 [P] Configure ESLint and Prettier for code quality
+- [X] T004 Configure Tailwind CSS with design tokens from constitution
+- [X] T005 Setup folder structure: app/, components/, lib/, hooks/, types/
 
 ---
 
@@ -39,13 +39,13 @@ description: Task list for Initial App Setup feature
 
 **CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T006 [P] Configure environment variables (.env.local) for Clerk, Supabase, App URL
-- [ ] T007 [P] Setup Supabase client in src/lib/supabase.ts
-- [ ] T008 Create TypeScript types for User, Question, Flashcard in src/types/index.ts
-- [ ] T009 Configure Clerk authentication provider in src/app/
-- [ ] T010 Setup auth middleware for protected routes in src/middleware.ts
-- [ ] T011 Create database schema SQL for Supabase in supabase/schema.sql
-- [ ] T012 Build reusable UI components in src/components/ui/ (Button, Card, Badge, Input)
+- [X] T006 [P] Configure environment variables (.env.local) for Clerk, Supabase, App URL
+- [X] T007 [P] Setup Supabase client in src/lib/supabase.ts
+- [X] T008 Create TypeScript types for User, Question, Flashcard in src/types/index.ts
+- [X] T009 Configure Clerk authentication provider in src/app/
+- [X] T010 Setup auth middleware for protected routes in src/middleware.ts
+- [X] T011 Create database schema SQL for Supabase in supabase/schema.sql
+- [X] T012 Build reusable UI components in src/components/ui/ (Button, Card, Badge, Input)
 
 **Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
@@ -57,11 +57,11 @@ description: Task list for Initial App Setup feature
 
 **Independent Test**: Load page and verify all sections render correctly
 
-- [ ] T013 [P] [US1] Create landing page layout in src/app/page.tsx
-- [ ] T014 [P] [US1] Implement Hero section with headline and CTA buttons in src/app/page.tsx
-- [ ] T015 [US1] Create Features grid component in src/components/landing/Features.tsx
-- [ ] T016 [US1] Implement "How it works" section in src/components/landing/HowItWorks.tsx
-- [ ] T017 [US1] Add Footer component with GitHub and Ko-fi links in src/components/layout/Footer.tsx
+- [X] T013 [P] [US1] Create landing page layout in src/app/page.tsx
+- [X] T014 [P] [US1] Implement Hero section with headline and CTA buttons in src/app/page.tsx
+- [X] T015 [US1] Create Features grid component in src/components/landing/Features.tsx
+- [X] T016 [US1] Implement "How it works" section in src/components/landing/HowItWorks.tsx
+- [X] T017 [US1] Add Footer component with GitHub and Ko-fi links in src/components/layout/Footer.tsx
 
 **Checkpoint**: Landing page functional and publicly accessible
 
@@ -73,8 +73,8 @@ description: Task list for Initial App Setup feature
 
 **Independent Test**: Sign in and verify user record created in Supabase
 
-- [ ] T018 [P] [US2] Create sign-in page in src/app/sign-in/[[...sign-in]]/page.tsx
-- [ ] T019 [P] [US2] Create sign-up page in src/app/sign-up/[[...sign-up]]/page.tsx
+- [X] T018 [P] [US2] Create sign-in page in src/app/sign-in/[[...sign-in]]/page.tsx
+- [X] T019 [P] [US2] Create sign-up page in src/app/sign-up/[[...sign-up]]/page.tsx
 - [ ] T020 [US2] Implement Clerk webhook handler in src/app/api/webhooks/clerk/route.ts
 - [ ] T021 [US2] Create user creation handler when Clerk user.created event fires
 - [ ] T022 [US2] Implement session persistence check in src/lib/auth.ts
