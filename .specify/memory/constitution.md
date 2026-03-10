@@ -1,5 +1,14 @@
 # AWS GenAI Pro Study Hub Constitution
 
+<!--
+Sync Impact Report:
+- Version change: 1.0.0 → 1.1.0
+- Added principles: IX. Commit After Each Task (NON-NEGOTIABLE)
+- Removed sections: none
+- Templates requiring updates: none (templates reference constitution dynamically)
+- Follow-up TODOs: none
+-->
+
 ## Core Principles
 
 ### I. Free Forever (NON-NEGOTIABLE)
@@ -25,6 +34,16 @@ Lessons use interactive HTML templates—not walls of text. Animated concept rev
 
 ### VIII. Easy Contribution
 JSON + Markdown PRs, zero backend knowledge needed. Clear templates for questions, flashcards, and lessons. Every question requires a distractor breakdown. Every lesson requires knowledge check and exam tip. Contribution docs must be beginner-friendly.
+
+### IX. Commit After Each Task (NON-NEGOTIABLE)
+Every completed task MUST be committed immediately with a clear, descriptive message. Small, focused commits enable better code review, easier rollback, and maintain clear project history. Commit messages should describe what changed and why.
+
+Rules:
+- Commit after completing each task from the task list
+- Use conventional commit format: `type: description`
+- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+- Include issue/task reference when applicable
+- Never mix unrelated changes in one commit
 
 ## Technology Stack
 
@@ -168,4 +187,4 @@ This constitution supersedes all other practice documents. All development decis
 - Complexity must be justified against simplicity principle
 - Use Vercel React Best Practices and frontend-design skill for UI implementation
 
-**Version**: 1.0.0 | **Ratified**: 2025-03-11 | **Last Amended**: 2025-03-11
+**Version**: 1.1.0 | **Ratified**: 2025-03-11 | **Last Amended**: 2025-03-11
