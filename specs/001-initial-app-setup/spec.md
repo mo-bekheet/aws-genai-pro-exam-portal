@@ -5,6 +5,12 @@
 **Status**: Draft  
 **Input**: User description: "use PRD file to create initial application setup"
 
+## Clarifications
+
+### Session 2025-03-11
+
+- Q: Scalability - How many concurrent users should the system support? → A: 1,000 concurrent users (MVP scope)
+
 ## User Scenarios & Testing *(mandatory)*
 
 ### User Story 1 - Landing Page (Priority: P1)
@@ -156,6 +162,7 @@ As a user preparing for the exam, I want to take a timed mock exam, so I can ass
 - **SC-005**: Mock exam timer accurately counts down and auto-submits
 - **SC-006**: 90% of users successfully sign in on first attempt
 - **SC-007**: Dashboard displays accurate streak count based on daily activity
+- **SC-008**: System supports 1,000 concurrent users without degradation
 
 ## Assumptions
 
