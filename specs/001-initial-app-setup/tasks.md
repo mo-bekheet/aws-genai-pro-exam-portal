@@ -127,11 +127,11 @@ description: Task list for Initial App Setup feature
 
 **Independent Test**: Start flashcard session, flip card, mark status
 
-- [ ] T039 [P] [US5] Create flashcards page in src/app/(dashboard)/flashcards/page.tsx
-- [ ] T040 [P] [US5] Create FlipCard component with Framer Motion in src/components/flashcards/FlipCard.tsx
+- [X] T039 [P] [US5] Create flashcards page in src/app/(dashboard)/flashcards/page.tsx
+- [X] T040 [P] [US5] Create FlipCard component with Framer Motion in src/components/flashcards/FlipCard.tsx
 - [ ] T041 [P] [US5] Create CardBrowser component in src/components/flashcards/CardBrowser.tsx
-- [ ] T042 [US5] Implement flashcard fetching in src/lib/flashcards.ts
-- [ ] T043 [US5] Add flashcard flip animation (3D rotateY, 300ms)
+- [X] T042 [US5] Implement flashcard fetching in src/lib/flashcards.ts
+- [X] T043 [US5] Add flashcard flip animation (3D rotateY, 300ms)
 - [ ] T044 [US5] Implement spaced repetition status (known/learning/new) in src/components/flashcards/CardControls.tsx
 - [ ] T045 [US5] Save flashcard progress to Supabase in src/lib/flashcard-progress.ts
 
