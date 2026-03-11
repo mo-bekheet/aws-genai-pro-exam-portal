@@ -108,14 +108,14 @@ description: Task list for Initial App Setup feature
 
 **Independent Test**: Browse questions, filter by domain/difficulty, verify feedback
 
-- [ ] T031 [P] [US4] Create questions page in src/app/(dashboard)/questions/page.tsx
-- [ ] T032 [P] [US4] Create QuestionCard component in src/components/questions/QuestionCard.tsx
-- [ ] T033 [P] [US4] Create QuestionFilter sidebar in src/components/questions/QuestionFilter.tsx
-- [ ] T034 [US4] Implement question fetching from GitHub Raw in src/lib/questions.ts
-- [ ] T035 [US4] Add domain badge component in src/components/questions/DomainBadge.tsx
-- [ ] T036 [US4] Add difficulty badge component in src/components/questions/DifficultyBadge.tsx
-- [ ] T037 [US4] Implement answer selection with feedback in src/components/questions/AnswerOption.tsx
-- [ ] T038 [US4] Create explanation panel in src/components/questions/Explanation.tsx
+- [X] T031 [P] [US4] Create questions page in src/app/(dashboard)/questions/page.tsx
+- [X] T032 [P] [US4] Create QuestionCard component in src/components/questions/QuestionCard.tsx
+- [X] T033 [P] [US4] Create QuestionFilter sidebar in src/components/questions/QuestionFilter.tsx
+- [X] T034 [US4] Implement question fetching from GitHub Raw in src/lib [X] T/questions.ts
+-035 [US4] Add domain badge component in src/components/ui/Badge.tsx
+- [X] T036 [US4] Add difficulty badge component in src/components/ui/Badge.tsx
+- [X] T037 [US4] Implement answer selection with feedback in src/components/questions/QuestionCard.tsx
+- [X] T038 [US4] Create explanation panel in src/components/questions/QuestionCard.tsx
 
 **Checkpoint**: Question bank fully functional with filtering
 
