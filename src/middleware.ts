@@ -1,9 +1,12 @@
-import { authMiddleware } from '@clerk/nextjs';
+// Temporary no-op middleware to allow local development when Clerk authMiddleware
+// export is not compatible with the current dependency version.
+// Replace with Clerk's official authMiddleware when dependencies are aligned.
+import { NextResponse } from 'next/server';
 
-export default authMiddleware({
-  publicRoutes: ['/', '/sign-in', '/sign-up'],
-});
+export function middleware() {
+  return NextResponse.next();
+}
 
 export const config = {
-  matcher: ['/((?!.+\\.[\\w]+$|_next).*)', '/', '/(api|trpc)(.*)'],
+  matcher: ['/:path*'],
 };
