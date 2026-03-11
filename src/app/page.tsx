@@ -140,7 +140,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Track your readiness</h3>
               <p className="text-[#94a3b8]">
-                Monitor your scores across all exam domains so you know exactly when you're ready for the real thing.
+                Monitor your scores across all exam domains so you know exactly when you are ready for the real thing.
               </p>
             </div>
           </div>
