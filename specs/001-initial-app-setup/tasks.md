@@ -145,14 +145,14 @@ description: Task list for Initial App Setup feature
 
 **Independent Test**: Start exam, answer questions, submit, view results
 
-- [ ] T046 [P] [US6] Create exams page in src/app/(dashboard)/exams/page.tsx
-- [ ] T047 [P] [US6] Create ExamSetup component in src/components/exam/ExamSetup.tsx
-- [ ] T048 [P] [US6] Create ExamTimer component in src/components/exam/ExamTimer.tsx
+- [X] T046 [P] [US6] Create exams page in src/app/(dashboard)/exams/page.tsx
+- [X] T047 [P] [US6] Create ExamSetup component in src/components/exam/ExamSetup.tsx
+- [X] T048 [P] [US6] Create ExamTimer component in src/components/exam/ExamTimer.tsx
 - [ ] T049 [US6] Build exam taking page in src/app/(dashboard)/exams/[id]/page.tsx
 - [ ] T050 [US6] Implement countdown timer with warning state (red + pulse at 10min)
 - [ ] T051 [US6] Create question navigator grid in src/components/exam/QuestionNavigator.tsx
 - [ ] T052 [US6] Implement auto-submit when timer expires
-- [ ] T053 [US6] Create ExamResults component in src/components/exam/ExamResults.tsx
+- [X] T053 [US6] Create ExamResults component in src/components/exam/ExamResults.tsx
 - [ ] T054 [US6] Add score calculation and domain heatmap in src/lib/exam-scoring.ts
 - [ ] T055 [US6] Save exam results to Supabase in src/lib/exam-results.ts
 
