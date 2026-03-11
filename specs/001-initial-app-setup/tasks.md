@@ -89,14 +89,14 @@ description: Task list for Initial App Setup feature
 
 **Independent Test**: Log in and verify all dashboard elements display
 
-- [ ] T023 [P] [US3] Create dashboard layout with Sidebar in src/app/(dashboard)/layout.tsx
-- [ ] T024 [P] [US3] Create Navbar component in src/components/layout/Navbar.tsx
-- [ ] T025 [P] [US3] Create Sidebar component in src/components/layout/Sidebar.tsx
-- [ ] T026 [US3] Build dashboard page in src/app/(dashboard)/page.tsx
-- [ ] T027 [US3] Implement exam countdown component in src/components/dashboard/ExamCountdown.tsx
-- [ ] T028 [US3] Implement study streak component in src/components/dashboard/StreakCounter.tsx
-- [ ] T029 [US3] Implement domain progress bars in src/components/dashboard/DomainProgress.tsx
-- [ ] T030 [US3] Add quick action buttons in src/app/(dashboard)/page.tsx
+- [X] T023 [P] [US3] Create dashboard layout with Sidebar in src/app/(dashboard)/layout.tsx
+- [X] T024 [P] [US3] Create Navbar component in src/components/layout/Navbar.tsx
+- [X] T025 [P] [US3] Create Sidebar component in src/components/layout/Sidebar.tsx
+- [X] T026 [US3] Build dashboard page in src/app/(dashboard)/page.tsx
+- [X] T027 [US3] Implement exam countdown component in src/components/dashboard/ExamCountdown.tsx
+- [X] T028 [US3] Implement study streak component in src/components/dashboard/StreakCounter.tsx
+- [X] T029 [US3] Implement domain progress bars in src/components/dashboard/DomainProgress.tsx
+- [X] T030 [US3] Add quick action buttons in src/app/(dashboard)/page.tsx
 
 **Checkpoint**: Dashboard displays all user progress information
 
