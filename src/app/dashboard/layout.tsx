@@ -1,5 +1,4 @@
 import { Navbar } from "@/components/layout/Navbar";
-import { Sidebar } from "@/components/layout/Sidebar";
 
 export default function DashboardLayout({
   children,
@@ -9,12 +8,9 @@ export default function DashboardLayout({
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0a0f1e]">
       <Navbar />
-      <div className="flex">
-        <Sidebar />
-        <main className="flex-1 p-8">
-          {children}
-        </main>
-      </div>
+      <main className="p-8">
+        {children}
+      </main>
     </div>
   );
 }
