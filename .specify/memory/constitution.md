@@ -2,10 +2,10 @@
 
 <!--
 Sync Impact Report:
-- Version change: 1.0.0 → 1.1.0
-- Added principles: IX. Commit After Each Task (NON-NEGOTIABLE)
+- Version change: 1.1.0 → 1.2.0
+- Added sections: Agent Skills (Required/Optional skills, usage rules)
 - Removed sections: none
-- Templates requiring updates: none (templates reference constitution dynamically)
+- Templates requiring updates: none
 - Follow-up TODOs: none
 -->
 
@@ -187,4 +187,25 @@ This constitution supersedes all other practice documents. All development decis
 - Complexity must be justified against simplicity principle
 - Use Vercel React Best Practices and frontend-design skill for UI implementation
 
-**Version**: 1.1.0 | **Ratified**: 2025-03-11 | **Last Amended**: 2025-03-11
+## Agent Skills
+
+The following agent skills must be used for development:
+
+### Required Skills
+- **vercel-react-best-practices**: Must be used for all React/Next.js component development
+- **vercel-composition-patterns**: Must be used for component architecture decisions
+- **frontend-design**: Must be used for creating UI components and pages
+
+### Optional Skills
+- **vercel-react-native-skills**: Only if building mobile app (not current scope)
+- **deploy-to-vercel**: Required for deployment
+- **web-design-guidelines**: For accessibility and UX compliance
+
+### Skill Usage Rules
+- When writing React components: Use vercel-react-best-practices skill
+- When designing component APIs: Use vercel-composition-patterns skill
+- When creating UI: Use frontend-design skill
+- When deploying: Use deploy-to-vercel skill
+- All UI must pass web-design-guidelines checks
+
+**Version**: 1.2.0 | **Ratified**: 2025-03-11 | **Last Amended**: 2025-03-11
