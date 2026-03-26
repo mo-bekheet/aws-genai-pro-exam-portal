@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.0.0",
+    "@clerk/nextjs": "^7.0.4",
     "@clerk/react": "^6.1.0",
     "@phosphor-icons/react": "^2.0.0",
     "@supabase/supabase-js": "^2.39.0",
@@ -20,6 +20,7 @@
     "react-dom": "^19.0.0",
     "reactflow": "^11.10.0",
     "recharts": "^2.10.0",
+    "svix": "^1.24.0",
     "tailwind-merge": "^2.2.0",
     "zustand": "^5.0.0"
   },

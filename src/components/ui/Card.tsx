@@ -1,8 +1,10 @@
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: 'default' | 'interactive';
+export type CardVariant = 'default' | 'interactive';
+
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
+  variant?: CardVariant;
 }
 
 export function Card({
@@ -11,10 +13,10 @@ export function Card({
   children,
   ...props
 }: CardProps) {
-  const baseStyles = 'bg-[#1e293b] border border-[#334155] rounded-xl';
+  const baseStyles = 'rounded-card border border-light-border dark:border-dark-border bg-light-bg-card dark:bg-dark-bg-card p-card';
   const variants = {
     default: '',
-    interactive: 'hover:border-[#6366f1] transition-colors cursor-pointer',
+    interactive: 'hover:border-[#6366f1] hover:dark:border-[#6366f1] transition-colors cursor-pointer',
   };
 
   return (
@@ -33,7 +35,7 @@ export function CardHeader({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={twMerge('p-6 pb-0', className)} {...props}>
+    <div className={twMerge('pb-0', className)} {...props}>
       {children}
     </div>
   );
@@ -45,7 +47,7 @@ export function CardContent({
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={twMerge('p-6', className)} {...props}>
+    <div className={twMerge('', className)} {...props}>
       {children}
     </div>
   );
@@ -57,7 +59,7 @@ export function CardTitle({
   ...props
 }: React.HTMLAttributes<HTMLHeadingElement>) {
   return (
-    <h3 className={twMerge('text-lg font-semibold text-white', className)} {...props}>
+    <h3 className={twMerge('text-lg font-semibold text-light-text-primary dark:text-dark-text-primary', className)} {...props}>
       {children}
     </h3>
   );

@@ -75,9 +75,9 @@ description: Task list for Initial App Setup feature
 
 - [X] T018 [P] [US2] Create sign-in page in src/app/sign-in/[[...sign-in]]/page.tsx
 - [X] T019 [P] [US2] Create sign-up page in src/app/sign-up/[[...sign-up]]/page.tsx
-- [ ] T020 [US2] Implement Clerk webhook handler in src/app/api/webhooks/clerk/route.ts
-- [ ] T021 [US2] Create user creation handler when Clerk user.created event fires
-- [ ] T022 [US2] Implement session persistence check in src/lib/auth.ts
+- [X] T020 [US2] Implement Clerk webhook handler in src/app/api/webhooks/clerk/route.ts
+- [X] T021 [US2] Create user creation handler when Clerk user.created event fires
+- [X] T022 [US2] Implement session persistence check in src/lib/auth.ts
 
 **Checkpoint**: Users can sign in with Google or GitHub
 
@@ -129,11 +129,11 @@ description: Task list for Initial App Setup feature
 
 - [X] T039 [P] [US5] Create flashcards page in src/app/(dashboard)/flashcards/page.tsx
 - [X] T040 [P] [US5] Create FlipCard component with Framer Motion in src/components/flashcards/FlipCard.tsx
-- [ ] T041 [P] [US5] Create CardBrowser component in src/components/flashcards/CardBrowser.tsx
+- [X] T041 [P] [US5] Create CardBrowser component in src/components/flashcards/CardBrowser.tsx
 - [X] T042 [US5] Implement flashcard fetching in src/lib/flashcards.ts
 - [X] T043 [US5] Add flashcard flip animation (3D rotateY, 300ms)
-- [ ] T044 [US5] Implement spaced repetition status (known/learning/new) in src/components/flashcards/CardControls.tsx
-- [ ] T045 [US5] Save flashcard progress to Supabase in src/lib/flashcard-progress.ts
+- [X] T044 [US5] Implement spaced repetition status (known/learning/new) in src/components/flashcards/CardControls.tsx
+- [X] T045 [US5] Save flashcard progress to Supabase in src/lib/flashcard-progress.ts
 
 **Checkpoint**: Flashcards with flip animation and progress tracking
 
@@ -148,13 +148,13 @@ description: Task list for Initial App Setup feature
 - [X] T046 [P] [US6] Create exams page in src/app/(dashboard)/exams/page.tsx
 - [X] T047 [P] [US6] Create ExamSetup component in src/components/exam/ExamSetup.tsx
 - [X] T048 [P] [US6] Create ExamTimer component in src/components/exam/ExamTimer.tsx
-- [ ] T049 [US6] Build exam taking page in src/app/(dashboard)/exams/[id]/page.tsx
-- [ ] T050 [US6] Implement countdown timer with warning state (red + pulse at 10min)
-- [ ] T051 [US6] Create question navigator grid in src/components/exam/QuestionNavigator.tsx
-- [ ] T052 [US6] Implement auto-submit when timer expires
+- [X] T049 [US6] Build exam taking page in src/app/(dashboard)/exams/[id]/page.tsx
+- [X] T050 [US6] Implement countdown timer with warning state (red + pulse at 10min)
+- [X] T051 [US6] Create question navigator grid in src/components/exam/QuestionNavigator.tsx
+- [X] T052 [US6] Implement auto-submit when timer expires
 - [X] T053 [US6] Create ExamResults component in src/components/exam/ExamResults.tsx
-- [ ] T054 [US6] Add score calculation and domain heatmap in src/lib/exam-scoring.ts
-- [ ] T055 [US6] Save exam results to Supabase in src/lib/exam-results.ts
+- [X] T054 [US6] Add score calculation and domain heatmap in src/lib/exam-scoring.ts
+- [X] T055 [US6] Save exam results to Supabase in src/lib/exam-results.ts
 
 **Checkpoint**: Full mock exam flow complete
 
@@ -164,13 +164,13 @@ description: Task list for Initial App Setup feature
 
 **Purpose**: Improvements that affect multiple user stories
 
-- [ ] T056 [P] Add loading states and skeleton loaders for all async content
-- [ ] T057 [P] Implement error boundaries and error pages
-- [ ] T058 [P] Add empty states for all list components
-- [ ] T059 Add keyboard navigation for flashcard flip
-- [ ] T060 Add mobile responsive styles for all pages
-- [ ] T061 Implement theme toggle (dark/light) in src/components/layout/ThemeToggle.tsx
-- [ ] T062 Add confetti animation on exam pass in src/components/exam/Confetti.tsx
+- [X] T056 [P] Add loading states and skeleton loaders for all async content
+- [X] T057 [P] Implement error boundaries and error pages
+- [X] T058 [P] Add empty states for all list components
+- [X] T059 Add keyboard navigation for flashcard flip
+- [X] T060 Add mobile responsive styles for all pages
+- [X] T061 Implement theme toggle (dark/light) in src/components/layout/ThemeToggle.tsx
+- [X] T062 Add confetti animation on exam pass in src/components/exam/Confetti.tsx
 
 ---
 

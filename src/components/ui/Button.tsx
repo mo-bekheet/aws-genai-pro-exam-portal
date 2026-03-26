@@ -1,8 +1,10 @@
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
+export type ButtonVariant = 'primary' | 'ghost' | 'danger';
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariant;
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -13,13 +15,12 @@ export function Button({
   children,
   ...props
 }: ButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center font-medium rounded-btn transition-all duration-150 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
     primary: 'bg-[#6366f1] hover:bg-[#4f46e5] text-white',
-    secondary: 'bg-[#1e293b] hover:bg-[#334155] text-white border border-[#334155]',
-    ghost: 'bg-transparent hover:bg-[#1e293b] text-[#94a3b8] hover:text-white',
-    danger: 'bg-[#ef4444] hover:bg-[#dc2626] text-white',
+    ghost: 'bg-transparent border border-[#6366f1] text-[#6366f1] hover:bg-[#6366f1]/10',
+    danger: 'bg-[#fee2e2] text-[#dc2626] hover:bg-[#fecaca] dark:bg-red-900/30 dark:text-red-400 dark:hover:bg-red-900/50',
   };
   
   const sizes = {

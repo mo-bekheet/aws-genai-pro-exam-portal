@@ -33,6 +33,44 @@ const config: Config = {
           light: "#f8fafc",
           dark: "#0a0f1e",
         },
+        dark: {
+          bg: {
+            primary: "#0a0f1e",
+            secondary: "#111827",
+            card: "#1e293b",
+          },
+          border: "#334155",
+          text: {
+            primary: "#f1f5f9",
+            muted: "#94a3b8",
+          },
+        },
+        light: {
+          bg: {
+            primary: "#ffffff",
+            secondary: "#f8fafc",
+            card: "#ffffff",
+          },
+          border: "#e2e8f0",
+          text: {
+            primary: "#0f172a",
+            muted: "#64748b",
+          },
+        },
+        difficulty: {
+          easy: {
+            bg: "#dcfce7",
+            text: "#16a34a",
+          },
+          medium: {
+            bg: "#fef3c7",
+            text: "#d97706",
+          },
+          hard: {
+            bg: "#fee2e2",
+            text: "#dc2626",
+          },
+        },
       },
       fontFamily: {
         sans: ["Plus Jakarta Sans", "sans-serif"],
@@ -42,6 +80,10 @@ const config: Config = {
       borderRadius: {
         card: "12px",
         btn: "8px",
+        pill: "9999px",
+      },
+      padding: {
+        card: "24px",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

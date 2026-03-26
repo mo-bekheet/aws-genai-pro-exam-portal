@@ -1,95 +1,104 @@
-# Implementation Plan: Initial App Setup
+# Implementation Plan: [FEATURE]
 
-**Branch**: `001-initial-app-setup` | **Date**: 2025-03-11 | **Spec**: [spec.md](./spec.md)
-**Input**: Feature specification from `/specs/001-initial-app-setup/spec.md`
+**Branch**: `[###-feature-name]` | **Date**: [DATE] | **Spec**: [link]
+**Input**: Feature specification from `/specs/[###-feature-name]/spec.md`
+
+**Note**: This template is filled in by the `/speckit.plan` command. See `.specify/templates/plan-template.md` for the execution workflow.
 
 ## Summary
 
-Build the initial AWS GenAI Pro Study Hub application with React 19 + Next.js 15. Core features: landing page, authentication via Clerk (Google/GitHub), dashboard with progress tracking, question bank, flashcards with spaced repetition, and mock exams. All content loaded from GitHub JSON files with user progress stored in Supabase.
+[Extract from feature spec: primary requirement + technical approach from research]
 
 ## Technical Context
 
-**Language/Version**: TypeScript 5.x  
-**Primary Dependencies**: Next.js 15, React 19, Clerk, Supabase, Tailwind CSS, Framer Motion, Zustand, Recharts, React Flow, Phosphor Icons  
-**Storage**: Supabase (PostgreSQL) + GitHub Raw (static JSON content)  
-**Testing**: Jest + React Testing Library  
-**Target Platform**: Web (responsive, mobile-friendly)  
-**Project Type**: Web application (Next.js App Router)  
-**Performance Goals**: <2s page load, <200ms interactions, 60fps animations  
-**Constraints**: Free forever (no paid features), MIT license, Vercel deployment  
-**Scale/Scope**: 1,000 concurrent users, 6 main features, 12 screens
+<!--
+  ACTION REQUIRED: Replace the content in this section with the technical details
+  for the project. The structure here is presented in advisory capacity to guide
+  the iteration process.
+-->
+
+**Language/Version**: [e.g., Python 3.11, Swift 5.9, Rust 1.75 or NEEDS CLARIFICATION]  
+**Primary Dependencies**: [e.g., FastAPI, UIKit, LLVM or NEEDS CLARIFICATION]  
+**Storage**: [if applicable, e.g., PostgreSQL, CoreData, files or N/A]  
+**Testing**: [e.g., pytest, XCTest, cargo test or NEEDS CLARIFICATION]  
+**Target Platform**: [e.g., Linux server, iOS 15+, WASM or NEEDS CLARIFICATION]
+**Project Type**: [e.g., library/cli/web-service/mobile-app/compiler/desktop-app or NEEDS CLARIFICATION]  
+**Performance Goals**: [domain-specific, e.g., 1000 req/s, 10k lines/sec, 60 fps or NEEDS CLARIFICATION]  
+**Constraints**: [domain-specific, e.g., <200ms p95, <100MB memory, offline-capable or NEEDS CLARIFICATION]  
+**Scale/Scope**: [domain-specific, e.g., 10k users, 1M LOC, 50 screens or NEEDS CLARIFICATION]
 
 ## Constitution Check
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-| Principle | Status | Notes |
-|-----------|--------|-------|
-| I. Free Forever | ✅ Pass | No paid features, free content access |
-| II. Open Source | ✅ Pass | MIT License, public repo |
-| III. Auth from Day One | ✅ Pass | Clerk OAuth from initial build |
-| IV. Community Supported | ✅ Pass | Ko-fi integration planned |
-| V. Responsive Web First | ✅ Pass | Mobile-responsive, touch-friendly |
-| VI. Content Grows Continuously | ✅ Pass | JSON/Markdown content via GitHub |
-| VII. Fun Learning First | ✅ Pass | Interactive HTML lessons |
-| VIII. Easy Contribution | ✅ Pass | JSON/Markdown contribution workflow |
-| IX. Commit After Each Task | ✅ Pass | Per-task commits required |
+[Gates determined based on constitution file]
 
 ## Project Structure
 
 ### Documentation (this feature)
 
 ```text
-specs/001-initial-app-setup/
-├── plan.md              # This file
-├── spec.md              # Feature specification
-├── research.md          # Phase 0 output
-├── data-model.md        # Phase 1 output
-├── quickstart.md        # Phase 1 output
-├── contracts/           # Phase 1 output (API contracts)
-└── tasks.md             # Phase 2 output (/speckit.tasks)
+specs/[###-feature]/
+├── plan.md              # This file (/speckit.plan command output)
+├── research.md          # Phase 0 output (/speckit.plan command)
+├── data-model.md        # Phase 1 output (/speckit.plan command)
+├── quickstart.md        # Phase 1 output (/speckit.plan command)
+├── contracts/           # Phase 1 output (/speckit.plan command)
+└── tasks.md             # Phase 2 output (/speckit.tasks command - NOT created by /speckit.plan)
 ```
 
 ### Source Code (repository root)
+<!--
+  ACTION REQUIRED: Replace the placeholder tree below with the concrete layout
+  for this feature. Delete unused options and expand the chosen structure with
+  real paths (e.g., apps/admin, packages/something). The delivered plan must
+  not include Option labels.
+-->
 
 ```text
+# [REMOVE IF UNUSED] Option 1: Single project (DEFAULT)
 src/
-├── app/                 # Next.js App Router
-│   ├── page.tsx        # Landing page
-│   ├── sign-in/        # Clerk auth
-│   ├── (dashboard)/    # Protected routes group
-│   │   ├── layout.tsx  # Sidebar + Navbar
-│   │   ├── page.tsx    # Dashboard
-│   │   ├── questions/  # Question bank
-│   │   ├── flashcards/ # Flashcards
-│   │   ├── exams/      # Mock exams
-│   │   └── progress/   # User progress
-│   └── api/            # API routes (if needed)
-├── components/
-│   ├── ui/             # Reusable UI components
-│   ├── layout/         # Navbar, Sidebar
-│   ├── questions/      # Question components
-│   ├── flashcards/    # Flashcard components
-│   └── exam/           # Exam components
-├── lib/
-│   ├── supabase.ts     # Database client
-│   ├── auth.ts         # Clerk helpers
-│   └── utils.ts        # Utilities
-├── hooks/              # Custom React hooks
-├── types/              # TypeScript types
-└── data/               # Static JSON (fetched from GitHub)
-
-public/                 # Static assets
+├── models/
+├── services/
+├── cli/
+└── lib/
 
 tests/
-├── unit/               # Component tests
-└── integration/       # E2E tests
+├── contract/
+├── integration/
+└── unit/
+
+# [REMOVE IF UNUSED] Option 2: Web application (when "frontend" + "backend" detected)
+backend/
+├── src/
+│   ├── models/
+│   ├── services/
+│   └── api/
+└── tests/
+
+frontend/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   └── services/
+└── tests/
+
+# [REMOVE IF UNUSED] Option 3: Mobile + API (when "iOS/Android" detected)
+api/
+└── [same as backend above]
+
+ios/ or android/
+└── [platform-specific structure: feature modules, UI flows, platform tests]
 ```
 
-**Structure Decision**: Next.js 15 App Router with App Router conventions. Feature-based organization inside (dashboard)/ group. Reusable UI components in /components/ui.
+**Structure Decision**: [Document the selected structure and reference the real
+directories captured above]
 
 ## Complexity Tracking
 
 > **Fill ONLY if Constitution Check has violations that must be justified**
 
-No violations. All principles satisfied.
+| Violation | Why Needed | Simpler Alternative Rejected Because |
+|-----------|------------|-------------------------------------|
+| [e.g., 4th project] | [current need] | [why 3 projects insufficient] |
+| [e.g., Repository pattern] | [specific problem] | [why direct DB access insufficient] |

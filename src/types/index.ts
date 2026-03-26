@@ -114,3 +114,49 @@ export const DOMAIN_COLORS: Record<Domain, string> = {
   responsible_ai: '#38bdf8',
   security: '#ef4444',
 };
+
+export const DOMAIN_BORDER_COLORS: Record<Domain, string> = {
+  foundations: 'border-l-blue-500',
+  bedrock: 'border-l-indigo-500',
+  lifecycle: 'border-l-purple-500',
+  responsible_ai: 'border-l-amber-500',
+  security: 'border-l-red-500',
+};
+
+export type Difficulty = 'beginner' | 'intermediate' | 'advanced';
+
+export interface KnowledgeCheckOption {
+  id: string;
+  text: string;
+}
+
+export interface KnowledgeCheck {
+  question: string;
+  options: KnowledgeCheckOption[];
+  correctAnswer: string;
+  explanation: string;
+}
+
+export interface LessonSection {
+  type: 'text' | 'concept' | 'analogy' | 'exam-tip' | 'warning' | 'reveal' | 'diagram' | 'knowledge-check';
+  title?: string;
+  content?: string;
+  items?: string[];
+  tableData?: string[][];
+  knowledgeCheck?: KnowledgeCheck;
+}
+
+export interface Lesson {
+  id: string;
+  slug: string;
+  title: string;
+  domain: Domain;
+  difficulty: Difficulty;
+  estimated_time: number;
+  author: string;
+  date: string;
+  order: number;
+  description: string;
+  content: LessonSection[];
+  is_completed?: boolean;
+}

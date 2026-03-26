@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { AnimatedCounter } from "./AnimatedCounter";
+
 interface ExamCountdownProps {
   examDate?: string | null;
 }
@@ -5,13 +10,22 @@ interface ExamCountdownProps {
 export function ExamCountdown({ examDate }: ExamCountdownProps) {
   if (!examDate) {
     return (
-      <div className="bg-[#1e293b] border border-[#334155] rounded-xl p-6">
-        <h3 className="text-lg font-semibold text-white mb-4">📅 Exam Countdown</h3>
-        <p className="text-[#94a3b8] mb-4">Set your exam date to track your preparation</p>
-        <button className="px-4 py-2 bg-[#6366f1] hover:bg-[#4f46e5] text-white rounded-lg font-medium transition-colors">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="bg-white dark:bg-[#1e293b] border border-gray-200 dark:border-[#334155] rounded-xl p-6 hover:border-indigo-500 dark:hover:border-[#6366f1] transition-all duration-300 hover:shadow-lg dark:hover:shadow-[#6366f1]/10"
+      >
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">📅 Exam Countdown</h3>
+        <p className="text-gray-500 dark:text-[#94a3b8] mb-4">Set your exam date to track your preparation</p>
+        <motion.button 
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+          className="px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-lg font-medium transition-colors"
+        >
           Set Exam Date
-        </button>
-      </div>
+        </motion.button>
+      </motion.div>
     );
   }
 
@@ -23,30 +37,51 @@ export function ExamCountdown({ examDate }: ExamCountdownProps) {
   const isPassed = daysRemaining <= 0;
 
   return (
-    <div className={`bg-[#1e293b] border rounded-xl p-6 ${
-      isPassed ? "border-[#ef4444]" : isUrgent ? "border-[#f59e0b]" : "border-[#334155]"
-    }`}>
-      <h3 className="text-lg font-semibold text-white mb-4">📅 Exam Countdown</h3>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      className={`bg-white dark:bg-[#1e293b] border rounded-xl p-6 hover:shadow-lg transition-all duration-300 hover:scale-[1.02] ${
+        isPassed ? "border-red-500 hover:shadow-red-500/10" : isUrgent ? "border-amber-500 hover:shadow-amber-500/10" : "border-gray-200 dark:border-[#334155] hover:border-indigo-500 dark:hover:border-[#6366f1] hover:shadow-[#6366f1]/10"
+      }`}
+    >
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">📅 Exam Countdown</h3>
       {isPassed ? (
-        <p className="text-[#ef4444] font-medium">Exam date has passed!</p>
+        <motion.p 
+          initial={{ scale: 0.8 }}
+          animate={{ scale: 1 }}
+          className="text-red-500 font-medium text-center text-lg"
+        >
+          Exam date has passed!
+        </motion.p>
       ) : (
         <div className="text-center">
-          <div className={`text-4xl font-bold mb-2 ${
-            isUrgent ? "text-[#f59e0b]" : "text-[#6366f1]"
-          }`}>
-            {daysRemaining}
-          </div>
-          <div className="text-[#94a3b8]">days remaining</div>
-          <div className="text-sm text-[#64748b] mt-2">
+          <motion.div 
+            className={`text-5xl font-bold mb-2 ${
+              isUrgent ? "text-amber-500" : "text-indigo-500"
+            }`}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            transition={{ type: "spring", stiffness: 200, delay: 0.3 }}
+          >
+            <AnimatedCounter value={daysRemaining} />
+          </motion.div>
+          <div className="text-gray-500 dark:text-[#94a3b8]">days remaining</div>
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="text-sm text-gray-400 dark:text-[#64748b] mt-2"
+          >
             {exam.toLocaleDateString("en-US", { 
               weekday: "long", 
               year: "numeric", 
               month: "long", 
               day: "numeric" 
             })}
-          </div>
+          </motion.div>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 }

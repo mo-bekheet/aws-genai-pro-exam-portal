@@ -1,8 +1,10 @@
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
-interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
-  variant?: 'default' | 'success' | 'warning' | 'danger' | 'info';
+export type BadgeVariant = 'default' | 'success' | 'warning' | 'danger' | 'info';
+
+export interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
+  variant?: BadgeVariant;
   size?: 'sm' | 'md';
 }
 
@@ -38,24 +40,52 @@ export function Badge({
   );
 }
 
-export function DifficultyBadge({ difficulty }: { difficulty: 'easy' | 'medium' | 'hard' }) {
-  const variants = {
-    easy: 'success',
-    medium: 'warning',
-    hard: 'danger',
-  } as const;
+export type DifficultyLevel = 'easy' | 'medium' | 'hard';
+
+interface DifficultyBadgeProps {
+  difficulty: DifficultyLevel;
+  className?: string;
+}
+
+export function DifficultyBadge({ difficulty, className = "" }: DifficultyBadgeProps) {
+  const styles = {
+    easy: 'bg-[#dcfce7] text-[#16a34a]',
+    medium: 'bg-[#fef3c7] text-[#d97706]',
+    hard: 'bg-[#fee2e2] text-[#dc2626]',
+  };
+
+  const labels = {
+    easy: 'Easy',
+    medium: 'Medium', 
+    hard: 'Hard',
+  };
 
   return (
-    <Badge variant={variants[difficulty]} size="sm">
-      {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
-    </Badge>
+    <span className={clsx(
+      'inline-flex items-center font-mono text-xs px-3 py-1 rounded-full',
+      styles[difficulty],
+      className
+    )}>
+      {labels[difficulty]}
+    </span>
   );
 }
 
-export function DomainBadge({ domain }: { domain: string }) {
+interface DomainBadgeProps {
+  domainNumber: number;
+  domainName: string;
+  className?: string;
+}
+
+export function DomainBadge({ domainNumber, domainName, className = "" }: DomainBadgeProps) {
   return (
-    <Badge variant="info" size="sm">
-      {domain}
-    </Badge>
+    <span className={clsx(
+      'inline-flex items-center font-mono text-xs px-3 py-1 rounded-full',
+      'bg-[#e0e7ff] text-[#6366f1]',
+      'dark:bg-[#6366f1]/20 dark:text-[#a5b4fc]',
+      className
+    )}>
+      Domain {domainNumber} — {domainName}
+    </span>
   );
 }
