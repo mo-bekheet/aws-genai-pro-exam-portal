@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Logo } from "@/components/ui/Logo";
 import { ThemeToggle } from "@/components/layout/ThemeToggle";
+import { Footer } from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -147,53 +148,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="py-12 px-6 border-t border-gray-200 dark:border-[#334155] bg-white dark:bg-[#0a0f1e]">
-        <div className="max-w-6xl mx-auto">
-          {/* Status */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-500/20 rounded-lg">
-              <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400 font-mono">42</span>
-              <span className="text-sm text-indigo-600 dark:text-indigo-400">Contributors</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-500/20 rounded-lg">
-              <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400 font-mono">342</span>
-              <span className="text-sm text-indigo-600 dark:text-indigo-400">Questions</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-500/20 rounded-lg">
-              <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400 font-mono">156</span>
-              <span className="text-sm text-indigo-600 dark:text-indigo-400">Lessons</span>
-            </div>
-            <div className="flex items-center gap-2 px-4 py-2 bg-indigo-100 dark:bg-indigo-500/20 rounded-lg">
-              <span className="text-lg font-bold text-indigo-600 dark:text-indigo-400 font-mono">89</span>
-              <span className="text-sm text-indigo-600 dark:text-indigo-400">Flashcards</span>
-            </div>
-          </div>
-          
-
-          
-          {/* Bottom */}
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 border-t border-gray-200 dark:border-[#334155]">
-            <div className="flex items-center gap-4">
-              <a
-                href="https://github.com/mo-bekheet/aws-genai-pro-exam-portal"
-                className="text-gray-600 dark:text-[#94a3b8] hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                GitHub
-              </a>
-              <a
-                href="/support"
-                className="text-gray-600 dark:text-[#94a3b8] hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                ☕ Support the project
-              </a>
-            </div>
-            <p className="text-gray-500 dark:text-[#64748b] text-sm">
-              MIT License · Free Forever
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
