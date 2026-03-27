@@ -96,13 +96,13 @@ export function Footer({
 
             {/* Badge Pills */}
             <div className="flex flex-wrap gap-2">
-              <span className="px-2 py-1 text-xs font-mono bg-[#1e293b] dark:bg-[#1e293b] border border-[#334155] dark:border-[#334155] text-[#94a3b8] dark:text-[#94a3b8] rounded">
+              <span className="px-2 py-1 text-xs font-mono bg-gray-100 dark:bg-[#1e293b] border border-gray-200 dark:border-[#334155] text-gray-600 dark:text-[#94a3b8] rounded">
                 MIT License
               </span>
-              <span className="px-2 py-1 text-xs font-mono bg-[#1e293b] dark:bg-[#1e293b] border border-[#334155] dark:border-[#334155] text-[#94a3b8] dark:text-[#94a3b8] rounded">
+              <span className="px-2 py-1 text-xs font-mono bg-gray-100 dark:bg-[#1e293b] border border-gray-200 dark:border-[#334155] text-gray-600 dark:text-[#94a3b8] rounded">
                 Open Source
               </span>
-              <span className="px-2 py-1 text-xs font-mono bg-[#1e293b] dark:bg-[#1e293b] border border-[#334155] dark:border-[#334155] text-[#94a3b8] dark:text-[#94a3b8] rounded">
+              <span className="px-2 py-1 text-xs font-mono bg-gray-100 dark:bg-[#1e293b] border border-gray-200 dark:border-[#334155] text-gray-600 dark:text-[#94a3b8] rounded">
                 Free Forever
               </span>
             </div>
@@ -111,7 +111,7 @@ export function Footer({
           {/* Column 2: Study */}
           <div>
             <h3 className="text-xs font-mono uppercase text-gray-400 dark:text-[#64748b] mb-4">
-              Study
+              STUDY
             </h3>
             <ul className="space-y-2">
               {STUDY_LINKS.map((link) => (
@@ -130,7 +130,7 @@ export function Footer({
           {/* Column 3: Practice */}
           <div>
             <h3 className="text-xs font-mono uppercase text-gray-400 dark:text-[#64748b] mb-4">
-              Practice
+              PRACTICE
             </h3>
             <ul className="space-y-2">
               {PRACTICE_LINKS.map((link) => (
@@ -149,7 +149,7 @@ export function Footer({
           {/* Column 4: Community */}
           <div>
             <h3 className="text-xs font-mono uppercase text-gray-400 dark:text-[#64748b] mb-4">
-              Community
+              COMMUNITY
             </h3>
             <ul className="space-y-2 mb-4">
               {COMMUNITY_LINKS.map((link) => (
