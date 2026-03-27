@@ -1,0 +1,267 @@
+{
+  "topic": "Amazon Bedrock",
+  "nodes": [
+    {
+      "id": "bedrock",
+      "label": "Amazon Bedrock",
+      "type": "root",
+      "children": ["foundation-models", "customization", "knowledge-bases", "agents", "guardrails", "inference", "security", "evaluation"]
+    },
+    {
+      "id": "foundation-models",
+      "label": "Foundation Models",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["fm-anthropic", "fm-meta", "fm-amazon", "fm-cohere", "fm-mistral", "fm-stability"]
+    },
+    {
+      "id": "fm-anthropic",
+      "label": "Anthropic — Claude 3 (Haiku, Sonnet, Opus)",
+      "type": "leaf",
+      "parent": "foundation-models"
+    },
+    {
+      "id": "fm-meta",
+      "label": "Meta — Llama 3",
+      "type": "leaf",
+      "parent": "foundation-models"
+    },
+    {
+      "id": "fm-amazon",
+      "label": "Amazon — Titan Text, Titan Embeddings, Titan Image",
+      "type": "leaf",
+      "parent": "foundation-models"
+    },
+    {
+      "id": "fm-cohere",
+      "label": "Cohere — Command, Embed",
+      "type": "leaf",
+      "parent": "foundation-models"
+    },
+    {
+      "id": "fm-mistral",
+      "label": "Mistral — Mistral 7B, Mixtral 8x7B",
+      "type": "leaf",
+      "parent": "foundation-models"
+    },
+    {
+      "id": "fm-stability",
+      "label": "Stability AI — Stable Diffusion (Image Generation)",
+      "type": "leaf",
+      "parent": "foundation-models"
+    },
+    {
+      "id": "customization",
+      "label": "Model Customization",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["fine-tuning", "continued-pretraining"]
+    },
+    {
+      "id": "fine-tuning",
+      "label": "Fine-Tuning",
+      "type": "node",
+      "parent": "customization",
+      "details": "Labeled JSONL data in S3; task-specific behavior; updates model weights"
+    },
+    {
+      "id": "continued-pretraining",
+      "label": "Continued Pre-Training",
+      "type": "node",
+      "parent": "customization",
+      "details": "Unlabeled domain corpus; domain adaptation; updates model weights"
+    },
+    {
+      "id": "knowledge-bases",
+      "label": "Knowledge Bases (RAG)",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["kb-data-sources", "kb-vector-stores", "kb-chunking", "kb-retrieval"]
+    },
+    {
+      "id": "kb-data-sources",
+      "label": "Data Sources — S3, Confluence, SharePoint, Salesforce, Web Crawler",
+      "type": "leaf",
+      "parent": "knowledge-bases"
+    },
+    {
+      "id": "kb-vector-stores",
+      "label": "Vector Stores — OpenSearch Serverless, Aurora (pgvector), Pinecone, Redis, MongoDB",
+      "type": "leaf",
+      "parent": "knowledge-bases"
+    },
+    {
+      "id": "kb-chunking",
+      "label": "Chunking Strategies — Fixed-size, Semantic, Hierarchical",
+      "type": "leaf",
+      "parent": "knowledge-bases"
+    },
+    {
+      "id": "kb-retrieval",
+      "label": "Retrieval — Semantic search, Hybrid search, Metadata filtering",
+      "type": "leaf",
+      "parent": "knowledge-bases"
+    },
+    {
+      "id": "agents",
+      "label": "Bedrock Agents",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["agents-react", "agents-action-groups", "agents-kb-integration", "agents-memory"]
+    },
+    {
+      "id": "agents-react",
+      "label": "ReAct Reasoning — Reason + Act loop for multi-step tasks",
+      "type": "leaf",
+      "parent": "agents"
+    },
+    {
+      "id": "agents-action-groups",
+      "label": "Action Groups — Lambda functions or OpenAPI schemas",
+      "type": "leaf",
+      "parent": "agents"
+    },
+    {
+      "id": "agents-kb-integration",
+      "label": "Knowledge Base Integration — Agents can query Knowledge Bases",
+      "type": "leaf",
+      "parent": "agents"
+    },
+    {
+      "id": "agents-memory",
+      "label": "Memory — Session context retention across turns",
+      "type": "leaf",
+      "parent": "agents"
+    },
+    {
+      "id": "guardrails",
+      "label": "Guardrails",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["gr-content-filter", "gr-pii", "gr-topic-denial", "gr-grounding", "gr-word-filter"]
+    },
+    {
+      "id": "gr-content-filter",
+      "label": "Content Filtering — Hate, violence, sexual, misconduct categories",
+      "type": "leaf",
+      "parent": "guardrails"
+    },
+    {
+      "id": "gr-pii",
+      "label": "PII Redaction — Detect and mask sensitive personal information",
+      "type": "leaf",
+      "parent": "guardrails"
+    },
+    {
+      "id": "gr-topic-denial",
+      "label": "Topic Denial — Block responses on specified topics",
+      "type": "leaf",
+      "parent": "guardrails"
+    },
+    {
+      "id": "gr-grounding",
+      "label": "Grounding Check — Verify response is grounded in source documents",
+      "type": "leaf",
+      "parent": "guardrails"
+    },
+    {
+      "id": "gr-word-filter",
+      "label": "Word Filter — Block specific words or phrases",
+      "type": "leaf",
+      "parent": "guardrails"
+    },
+    {
+      "id": "inference",
+      "label": "Inference & Pricing",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["inf-ondemand", "inf-provisioned", "inf-crossregion", "inf-batch"]
+    },
+    {
+      "id": "inf-ondemand",
+      "label": "On-Demand — Pay per input/output token; no commitment",
+      "type": "leaf",
+      "parent": "inference"
+    },
+    {
+      "id": "inf-provisioned",
+      "label": "Provisioned Throughput — Reserved model units; hourly billing; consistent latency",
+      "type": "leaf",
+      "parent": "inference"
+    },
+    {
+      "id": "inf-crossregion",
+      "label": "Cross-Region Inference — Inference profiles for multi-region routing",
+      "type": "leaf",
+      "parent": "inference"
+    },
+    {
+      "id": "inf-batch",
+      "label": "Batch Inference — Asynchronous processing for large workloads",
+      "type": "leaf",
+      "parent": "inference"
+    },
+    {
+      "id": "security",
+      "label": "Security & Compliance",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["sec-iam", "sec-privatelink", "sec-kms", "sec-privacy", "sec-compliance"]
+    },
+    {
+      "id": "sec-iam",
+      "label": "IAM — Fine-grained access control for model invocation",
+      "type": "leaf",
+      "parent": "security"
+    },
+    {
+      "id": "sec-privatelink",
+      "label": "AWS PrivateLink — Private VPC endpoint; no public internet",
+      "type": "leaf",
+      "parent": "security"
+    },
+    {
+      "id": "sec-kms",
+      "label": "AWS KMS — Encryption at rest and in transit",
+      "type": "leaf",
+      "parent": "security"
+    },
+    {
+      "id": "sec-privacy",
+      "label": "Data Privacy — Customer data not used to train base models",
+      "type": "leaf",
+      "parent": "security"
+    },
+    {
+      "id": "sec-compliance",
+      "label": "Compliance — SOC 1/2/3, ISO 27001, HIPAA eligible, GDPR",
+      "type": "leaf",
+      "parent": "security"
+    },
+    {
+      "id": "evaluation",
+      "label": "Model Evaluation",
+      "type": "category",
+      "parent": "bedrock",
+      "children": ["eval-automatic", "eval-human", "eval-datasets"]
+    },
+    {
+      "id": "eval-automatic",
+      "label": "Automatic Metrics — BERTScore, ROUGE, METEOR, accuracy",
+      "type": "leaf",
+      "parent": "evaluation"
+    },
+    {
+      "id": "eval-human",
+      "label": "Human Evaluation — Reviewer workflows for subjective quality assessment",
+      "type": "leaf",
+      "parent": "evaluation"
+    },
+    {
+      "id": "eval-datasets",
+      "label": "Evaluation Datasets — Built-in or custom prompt datasets",
+      "type": "leaf",
+      "parent": "evaluation"
+    }
+  ]
+}

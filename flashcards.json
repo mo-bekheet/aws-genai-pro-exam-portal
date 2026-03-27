@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What is Amazon Bedrock?",
+    "answer": "A fully managed AWS service that provides access to foundation models (FMs) from multiple AI providers through a single API, enabling generative AI application development without infrastructure management.",
+    "hint": "Think: managed service + multiple model providers + single API"
+  },
+  {
+    "question": "Which foundation model providers are available in Amazon Bedrock?",
+    "answer": "Anthropic (Claude), Meta (Llama), Mistral, Cohere, Stability AI, and Amazon (Titan).",
+    "hint": "Six providers — includes both open-weight and proprietary models"
+  },
+  {
+    "question": "What is the difference between fine-tuning and continued pre-training in Bedrock?",
+    "answer": "Fine-tuning adapts a model to a specific task using labeled input-output pairs (JSONL). Continued pre-training adapts a model to a domain using large amounts of unlabeled text data.",
+    "hint": "Labeled data = fine-tuning; Unlabeled domain data = continued pre-training"
+  },
+  {
+    "question": "What is Retrieval-Augmented Generation (RAG) in the context of Bedrock?",
+    "answer": "RAG retrieves relevant documents from a knowledge base at inference time and injects them into the model prompt, allowing the model to answer questions grounded in up-to-date or proprietary data without retraining.",
+    "hint": "Retrieve → Augment prompt → Generate response"
+  },
+  {
+    "question": "What vector stores does Amazon Bedrock Knowledge Bases support?",
+    "answer": "Amazon OpenSearch Serverless, Amazon Aurora (pgvector), Pinecone, Redis Enterprise Cloud, and MongoDB Atlas.",
+    "hint": "OpenSearch Serverless is the default AWS-native option"
+  },
+  {
+    "question": "What are Amazon Bedrock Guardrails?",
+    "answer": "A feature that applies content filtering, PII redaction, topic denial, word filters, and grounding checks to both model inputs and outputs, independent of the underlying model.",
+    "hint": "Safety layer applied at invocation — works across all supported models"
+  },
+  {
+    "question": "What is Provisioned Throughput in Amazon Bedrock?",
+    "answer": "A billing option that reserves dedicated model capacity (model units) for a committed period, providing consistent throughput for high-volume, latency-sensitive workloads. Billed per model unit per hour regardless of usage.",
+    "hint": "Reserved capacity = predictable performance; on-demand = pay per token"
+  },
+  {
+    "question": "How do Amazon Bedrock Agents work?",
+    "answer": "Agents use ReAct-style reasoning to orchestrate multi-step tasks. They break down user requests, call action groups (Lambda functions or OpenAPI schemas), query knowledge bases, and synthesize final responses.",
+    "hint": "ReAct = Reason + Act; action groups = Lambda or OpenAPI"
+  },
+  {
+    "question": "What data format is required for Bedrock fine-tuning jobs?",
+    "answer": "JSONL (JSON Lines) format with labeled prompt-completion pairs, stored in Amazon S3.",
+    "hint": "One JSON object per line; stored in S3 before job creation"
+  },
+  {
+    "question": "What is cross-region inference in Amazon Bedrock?",
+    "answer": "A feature using inference profiles that routes model invocation requests across multiple AWS regions to improve availability and handle traffic spikes, at the cost of potentially higher latency.",
+    "hint": "Inference profiles enable multi-region routing for resilience"
+  },
+  {
+    "question": "Does Amazon Bedrock expose model weights to customers?",
+    "answer": "No. Bedrock provides API-based access only. Model weights are not accessible, downloadable, or self-hostable.",
+    "hint": "Managed API access only — contrast with SageMaker JumpStart where some models allow weight access"
+  },
+  {
+    "question": "What chunking strategies are available in Bedrock Knowledge Bases?",
+    "answer": "Fixed-size chunking, semantic chunking, and hierarchical chunking. Each affects retrieval precision and context window usage differently.",
+    "hint": "Chunking strategy impacts retrieval quality and token cost"
+  },
+  {
+    "question": "What metrics does Bedrock Model Evaluation support?",
+    "answer": "Automatic metrics (BERTScore, ROUGE, METEOR, accuracy) and human evaluation workflows where reviewers rate model outputs.",
+    "hint": "Both automated scoring and human-in-the-loop evaluation are supported"
+  },
+  {
+    "question": "How does Bedrock ensure data privacy?",
+    "answer": "Customer data is not used to train or improve base models. Models run within AWS infrastructure, and VPC endpoints via AWS PrivateLink prevent data from traversing the public internet.",
+    "hint": "No data used for training + PrivateLink for network isolation"
+  },
+  {
+    "question": "What AWS service is used for logging and monitoring Bedrock invocations?",
+    "answer": "Amazon CloudWatch for metrics and logs. Model invocation logging can be enabled to capture request/response payloads in S3 or CloudWatch Logs.",
+    "hint": "CloudWatch metrics + optional invocation logging to S3 or CW Logs"
+  }
+]

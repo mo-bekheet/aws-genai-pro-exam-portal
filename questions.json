@@ -1,0 +1,122 @@
+[
+  {
+    "type": "mcq",
+    "question": "A company wants to build a customer support chatbot that answers questions based on their internal product documentation stored in S3. The documentation is updated weekly. Which Amazon Bedrock feature is MOST appropriate?",
+    "options": [
+      "Fine-tune a Titan model with the product documentation",
+      "Use Bedrock Knowledge Bases with S3 as the data source and sync weekly",
+      "Use continued pre-training with the product documentation",
+      "Embed the documentation directly in the system prompt"
+    ],
+    "correct": 1,
+    "explanation": "Bedrock Knowledge Bases with RAG is the correct choice. It retrieves relevant documents at inference time without retraining, supports S3 as a data source, and can be re-synced as documentation updates. Fine-tuning and continued pre-training require retraining jobs for each update. Embedding full documentation in the system prompt is impractical due to context window limits and cost."
+  },
+  {
+    "type": "mcq",
+    "question": "A machine learning team needs to adapt a foundation model in Bedrock to understand proprietary medical terminology using a large corpus of unlabeled clinical notes. Which customization approach should they use?",
+    "options": [
+      "Fine-tuning with labeled JSONL data",
+      "Continued pre-training with the clinical notes corpus",
+      "Retrieval-Augmented Generation with a medical knowledge base",
+      "Prompt engineering with few-shot examples"
+    ],
+    "correct": 1,
+    "explanation": "Continued pre-training is designed for domain adaptation using large amounts of unlabeled text. It teaches the model domain-specific vocabulary and patterns. Fine-tuning requires labeled input-output pairs and is for task-specific behavior. RAG retrieves at inference time but does not change model weights. Prompt engineering does not modify the model."
+  },
+  {
+    "type": "mcq",
+    "question": "An application uses Amazon Bedrock and must prevent the model from generating responses about competitor products and must redact any customer PII from outputs. Which Bedrock feature addresses BOTH requirements?",
+    "options": [
+      "Bedrock Agents with custom Lambda action groups",
+      "Bedrock Guardrails with topic denial and PII redaction policies",
+      "Bedrock Model Evaluation with custom metrics",
+      "Provisioned Throughput with content filtering enabled"
+    ],
+    "correct": 1,
+    "explanation": "Bedrock Guardrails supports topic denial (blocking responses about specific subjects like competitors) and PII redaction (detecting and masking sensitive information in outputs). Agents handle task orchestration, not content filtering. Model Evaluation assesses output quality. Provisioned Throughput is a capacity reservation feature unrelated to content control."
+  },
+  {
+    "type": "mcq",
+    "question": "A company runs a high-volume document processing pipeline using Amazon Bedrock that processes 10,000 documents per hour consistently throughout the business day. They are experiencing throttling and unpredictable latency. What is the MOST cost-effective solution?",
+    "options": [
+      "Implement exponential backoff and retry logic",
+      "Switch to a smaller, faster foundation model",
+      "Purchase Provisioned Throughput for the required model",
+      "Deploy the model on Amazon SageMaker instead"
+    ],
+    "correct": 2,
+    "explanation": "Provisioned Throughput reserves dedicated model capacity (model units) for consistent, high-volume workloads, eliminating throttling and providing predictable latency. For sustained high-volume usage, it is more cost-effective than on-demand pricing. Retry logic handles throttling but does not prevent it. Switching models may reduce quality. SageMaker adds operational complexity."
+  },
+  {
+    "type": "mcq",
+    "question": "A Bedrock Agent needs to look up real-time order status from a company's order management system. How should this integration be implemented?",
+    "options": [
+      "Store order data in a Bedrock Knowledge Base and sync hourly",
+      "Fine-tune the model with historical order data",
+      "Create an action group with a Lambda function that calls the order management API",
+      "Use cross-region inference to access the order system"
+    ],
+    "correct": 2,
+    "explanation": "Bedrock Agents use action groups to call external systems. An action group maps to a Lambda function (or OpenAPI schema) that can call any API, including an order management system, in real time. Knowledge Bases are for static document retrieval, not real-time transactional data. Fine-tuning embeds historical patterns, not live data. Cross-region inference is for availability routing, not external API integration."
+  },
+  {
+    "type": "mcq",
+    "question": "Which statement about Amazon Bedrock data privacy is CORRECT?",
+    "options": [
+      "AWS uses customer prompts to improve foundation model quality",
+      "Customer data sent to Bedrock is used to fine-tune base models for all customers",
+      "Customer data is not used to train or improve base models, and models run within AWS infrastructure",
+      "Bedrock requires customers to opt out of data sharing explicitly"
+    ],
+    "correct": 2,
+    "explanation": "Amazon Bedrock guarantees that customer data (prompts, completions, fine-tuning data) is not used to train or improve the underlying base models. This is a key differentiator for enterprise adoption. Data is processed within AWS infrastructure, and PrivateLink can be used for network isolation. There is no opt-out requirement because data sharing does not occur by default."
+  },
+  {
+    "type": "mcq",
+    "question": "A team wants to compare the output quality of Claude 3 Sonnet and Amazon Titan Text for a summarization task using both automated metrics and human reviewers. Which Bedrock feature supports this?",
+    "options": [
+      "Bedrock Guardrails with grounding score comparison",
+      "Bedrock Model Evaluation with automatic and human evaluation workflows",
+      "Bedrock Knowledge Bases with relevance scoring",
+      "Bedrock Agents with parallel action group execution"
+    ],
+    "correct": 1,
+    "explanation": "Bedrock Model Evaluation allows you to run evaluation jobs against multiple models using the same dataset, scoring outputs with automatic metrics (BERTScore, ROUGE) or routing outputs to human reviewers. This directly supports model comparison for task-specific quality assessment. Guardrails measure safety, not quality. Knowledge Bases handle retrieval. Agents orchestrate tasks."
+  },
+  {
+    "type": "mcq",
+    "question": "A developer is building a RAG application using Bedrock Knowledge Bases. The documents are long technical manuals, and retrieval quality is poor because chunks lack surrounding context. Which chunking strategy should they evaluate?",
+    "options": [
+      "Fixed-size chunking with a larger chunk size",
+      "Hierarchical chunking that preserves parent-child document structure",
+      "Semantic chunking based on sentence embeddings",
+      "Disable chunking and index full documents"
+    ],
+    "correct": 1,
+    "explanation": "Hierarchical chunking preserves the structural relationship between document sections (parent chunks) and their sub-sections (child chunks), improving retrieval context for long technical documents. Fixed-size chunking may still break context at arbitrary boundaries. Semantic chunking groups by meaning but may not preserve document hierarchy. Indexing full documents exceeds context window limits and reduces retrieval precision."
+  },
+  {
+    "type": "mcq",
+    "question": "An enterprise requires that all Amazon Bedrock API calls from their application never traverse the public internet. Which AWS feature enables this?",
+    "options": [
+      "Amazon CloudFront distribution in front of Bedrock endpoints",
+      "AWS WAF rules applied to Bedrock API Gateway",
+      "AWS PrivateLink VPC endpoint for Amazon Bedrock",
+      "Amazon VPC peering with the Bedrock service VPC"
+    ],
+    "correct": 2,
+    "explanation": "AWS PrivateLink creates a VPC endpoint that routes Bedrock API traffic through the AWS private network, never traversing the public internet. This satisfies strict network isolation requirements. CloudFront is a CDN for public content delivery. WAF provides application-layer filtering but does not change network routing. VPC peering is for customer-to-customer VPC connectivity, not service endpoints."
+  },
+  {
+    "type": "mcq",
+    "question": "When should you choose fine-tuning over RAG for a generative AI use case on Amazon Bedrock?",
+    "options": [
+      "When the knowledge base is updated frequently and must reflect real-time data",
+      "When you need the model to adopt a specific writing style, tone, or task behavior consistently",
+      "When the application requires citing source documents in responses",
+      "When reducing inference latency is the primary concern"
+    ],
+    "correct": 1,
+    "explanation": "Fine-tuning is appropriate when you need to change the model's behavior, style, or task performance — embedding patterns into model weights. RAG is better for grounding responses in up-to-date or proprietary knowledge. RAG supports source citation natively. Fine-tuning does not reduce inference latency (model size is unchanged). Frequently updated data favors RAG since fine-tuning requires retraining."
+  }
+]

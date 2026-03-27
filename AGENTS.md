@@ -22,7 +22,7 @@ npm test && npm run lint
 TypeScript 5.x: Follow standard conventions
 
 ## Recent Changes
-
+`
 - 001-initial-app-setup: Added TypeScript 5.x + Next.js 15, React 19, Clerk, Supabase, Tailwind CSS, Framer Motion, Zustand, Recharts, React Flow, Phosphor Icons
 
 <!-- MANUAL ADDITIONS START -->
