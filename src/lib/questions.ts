@@ -1,5 +1,5 @@
 import { Question } from "@/types";
-import questionsData from "@/data/questions.json";
+import questionsData from "@/data/questions/all.json";
 
 interface RawQuestion {
   type: string;

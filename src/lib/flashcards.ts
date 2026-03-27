@@ -1,5 +1,5 @@
 import { Flashcard } from "@/types";
-import flashcardsData from "@/data/flashcards.json";
+import flashcardsData from "@/data/flashcards/all.json";
 
 interface RawFlashcard {
   question: string;

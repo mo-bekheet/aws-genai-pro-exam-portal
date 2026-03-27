@@ -1,5 +1,5 @@
 import { Domain } from '@/types';
-import mindmapsData from './mindmaps.json';
+import mindmapsData from './mindmaps/bedrock.json';
 
 export interface MindMapNode {
   id: string;
