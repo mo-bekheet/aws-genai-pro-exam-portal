@@ -1,8 +1,37 @@
 import { Flashcard } from "@/types";
 import flashcardsData from "@/data/flashcards.json";
 
+interface RawFlashcard {
+  question: string;
+  answer: string;
+  hint: string;
+}
+
+function convertRawFlashcard(raw: RawFlashcard, index: number): Flashcard {
+  return {
+    id: `fc-${index + 1}`,
+    domain: 'bedrock',
+    type: 'concept',
+    difficulty: 'easy',
+    front: {
+      question: raw.question,
+      hint: raw.hint,
+      emoji: '🟣',
+    },
+    back: {
+      answer: raw.answer,
+      key_points: [],
+      mnemonic: '',
+      analogy: '',
+    },
+    exam_tip: null,
+    related_cards: [],
+    tags: ['bedrock'],
+  };
+}
+
 export async function fetchFlashcards(): Promise<Flashcard[]> {
-  return flashcardsData as Flashcard[];
+  return (flashcardsData as RawFlashcard[]).map((f, i) => convertRawFlashcard(f, i));
 }
 
 export function filterFlashcards(

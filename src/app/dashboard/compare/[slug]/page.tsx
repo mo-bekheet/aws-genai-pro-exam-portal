@@ -1,10 +1,15 @@
 "use client";
 
 import { useState, useMemo } from 'react';
-import { getAllComparisons, filterComparisons } from '@/lib/comparisons';
-import { FilterChips, ComparisonGrid } from '@/components/compare';
+import { useRouter, useParams } from 'next/navigation';
+import { getAllComparisons, getComparisonBySlug, getRelatedComparisons, filterComparisons } from '@/lib/comparisons';
+import { FilterChips, ComparisonGrid, ComparisonDetail, RelatedComparisons } from '@/components/compare';
 
-export default function CompareIndexPage() {
+export default function ComparePage() {
+  const router = useRouter();
+  const params = useParams();
+  const slug = params?.slug as string | undefined;
+  
   const [searchQuery, setSearchQuery] = useState('');
   const [activeFilter, setActiveFilter] = useState('all');
   
@@ -14,6 +19,9 @@ export default function CompareIndexPage() {
     return filterComparisons(allComparisons, searchQuery, activeFilter);
   }, [allComparisons, searchQuery, activeFilter]);
   
+  const currentComparison = slug ? getComparisonBySlug(slug) : null;
+  const relatedComparisons = slug ? getRelatedComparisons(slug) : [];
+  
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
   };
@@ -22,6 +30,19 @@ export default function CompareIndexPage() {
     setActiveFilter(filter);
   };
 
+  // Detail view
+  if (currentComparison) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-[#0a0f1e]">
+        <ComparisonDetail comparison={currentComparison} />
+        <div className="max-w-6xl mx-auto px-6 pb-8">
+          <RelatedComparisons comparisons={relatedComparisons} />
+        </div>
+      </div>
+    );
+  }
+  
+  // Browse view
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#0a0f1e]">
       <div className="max-w-6xl mx-auto px-6 py-8">
