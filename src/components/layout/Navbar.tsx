@@ -13,6 +13,7 @@ const navItems = [
   { href: "/dashboard/questions", label: "Questions", icon: "❓" },
   { href: "/dashboard/exams", label: "Exams", icon: "📝" },
   { href: "/dashboard/mind-maps", label: "Mind Maps", icon: "🧠" },
+  { href: "/dashboard/compare", label: "Compare", icon: "⚖️" },
   { href: "/dashboard/progress", label: "Progress", icon: "📊" },
 ];
 

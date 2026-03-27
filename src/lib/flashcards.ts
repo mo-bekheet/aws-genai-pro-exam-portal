@@ -1,22 +1,8 @@
 import { Flashcard } from "@/types";
-
-const GITHUB_RAW_URL = "https://raw.githubusercontent.com/mo-bekheet/aws-genai-pro-study-materials/main";
+import flashcardsData from "@/data/flashcards.json";
 
 export async function fetchFlashcards(): Promise<Flashcard[]> {
-  try {
-    const response = await fetch(`${GITHUB_RAW_URL}/flashcards/all.json`, {
-      next: { revalidate: 3600 },
-    });
-    
-    if (!response.ok) {
-      throw new Error("Failed to fetch flashcards");
-    }
-    
-    return response.json();
-  } catch (error) {
-    console.error("Error fetching flashcards:", error);
-    return [];
-  }
+  return flashcardsData as Flashcard[];
 }
 
 export function filterFlashcards(
