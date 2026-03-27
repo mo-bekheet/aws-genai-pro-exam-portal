@@ -1,0 +1,23 @@
+[
+  {
+    "id": "bedrock-001",
+    "domain": "bedrock",
+    "subdomain": "customization",
+    "difficulty": "medium",
+    "type": "single",
+    "stem": "A machine learning team needs to adapt a foundation model in Bedrock to understand proprietary medical terminology using a large corpus of unlabeled clinical notes. Which customization approach should they use?",
+    "options": {
+      "A": "Fine-tuning with labeled JSONL data",
+      "B": "Continued pre-training with the clinical notes corpus",
+      "C": "Retrieval-Augmented Generation with a medical knowledge base",
+      "D": "Prompt engineering with few-shot examples"
+    },
+    "answer": "B",
+    "explanation": "Continued pre-training is designed for domain adaptation using large amounts of unlabeled text. It teaches the model domain-specific vocabulary and patterns. Fine-tuning requires labeled input-output pairs and is for task-specific behavior. RAG retrieves at inference time but does not change model weights. Prompt engineering does not modify the model.",
+    "distractors": "Fine-tuning requires labeled data; RAG doesn't modify model weights; Prompt engineering doesn't change the model",
+    "source": null,
+    "tags": ["bedrock", "customization", "continued-pretraining"],
+    "contributor": "mo-bekheet",
+    "date_added": "2024-01-15"
+  }
+]

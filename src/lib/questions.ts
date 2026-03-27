@@ -1,22 +1,8 @@
 import { Question } from "@/types";
-
-const GITHUB_RAW_URL = "https://raw.githubusercontent.com/mo-bekheet/aws-genai-pro-study-materials/main";
+import questionsData from "@/data/questions.json";
 
 export async function fetchQuestions(): Promise<Question[]> {
-  try {
-    const response = await fetch(`${GITHUB_RAW_URL}/questions/all.json`, {
-      next: { revalidate: 3600 },
-    });
-    
-    if (!response.ok) {
-      throw new Error("Failed to fetch questions");
-    }
-    
-    return response.json();
-  } catch (error) {
-    console.error("Error fetching questions:", error);
-    return [];
-  }
+  return questionsData as Question[];
 }
 
 export function filterQuestions(

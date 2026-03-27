@@ -1,0 +1,301 @@
+{
+  "topic": "Amazon Bedrock",
+  "nodes": [
+    {
+      "id": "bedrock",
+      "label": "Amazon Bedrock",
+      "parentId": null,
+      "type": "root",
+      "color": "#6366f1"
+    },
+    {
+      "id": "foundation-models",
+      "label": "Foundation Models",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#6366f1"
+    },
+    {
+      "id": "fm-anthropic",
+      "label": "Anthropic — Claude 3 (Haiku, Sonnet, Opus)",
+      "parentId": "foundation-models",
+      "type": "leaf",
+      "color": "#6366f1"
+    },
+    {
+      "id": "fm-meta",
+      "label": "Meta — Llama 3",
+      "parentId": "foundation-models",
+      "type": "leaf",
+      "color": "#6366f1"
+    },
+    {
+      "id": "fm-amazon",
+      "label": "Amazon — Titan Text, Titan Embeddings, Titan Image",
+      "parentId": "foundation-models",
+      "type": "leaf",
+      "color": "#6366f1"
+    },
+    {
+      "id": "fm-cohere",
+      "label": "Cohere — Command, Embed",
+      "parentId": "foundation-models",
+      "type": "leaf",
+      "color": "#6366f1"
+    },
+    {
+      "id": "fm-mistral",
+      "label": "Mistral — Mistral 7B, Mixtral 8x7B",
+      "parentId": "foundation-models",
+      "type": "leaf",
+      "color": "#6366f1"
+    },
+    {
+      "id": "fm-stability",
+      "label": "Stability AI — Stable Diffusion (Image Generation)",
+      "parentId": "foundation-models",
+      "type": "leaf",
+      "color": "#6366f1"
+    },
+    {
+      "id": "customization",
+      "label": "Model Customization",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "fine-tuning",
+      "label": "Fine-Tuning",
+      "parentId": "customization",
+      "type": "node",
+      "color": "#8b5cf6",
+      "description": "Labeled JSONL data in S3; task-specific behavior; updates model weights"
+    },
+    {
+      "id": "continued-pretraining",
+      "label": "Continued Pre-Training",
+      "parentId": "customization",
+      "type": "node",
+      "color": "#8b5cf6",
+      "description": "Unlabeled domain corpus; domain adaptation; updates model weights"
+    },
+    {
+      "id": "knowledge-bases",
+      "label": "Knowledge Bases (RAG)",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "kb-data-sources",
+      "label": "Data Sources — S3, Confluence, SharePoint, Salesforce, Web Crawler",
+      "parentId": "knowledge-bases",
+      "type": "leaf",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "kb-vector-stores",
+      "label": "Vector Stores — OpenSearch Serverless, Aurora (pgvector), Pinecone, Redis, MongoDB",
+      "parentId": "knowledge-bases",
+      "type": "leaf",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "kb-chunking",
+      "label": "Chunking Strategies — Fixed-size, Semantic, Hierarchical",
+      "parentId": "knowledge-bases",
+      "type": "leaf",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "kb-retrieval",
+      "label": "Retrieval — Semantic search, Hybrid search, Metadata filtering",
+      "parentId": "knowledge-bases",
+      "type": "leaf",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "agents",
+      "label": "Bedrock Agents",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#22c55e"
+    },
+    {
+      "id": "agents-react",
+      "label": "ReAct Reasoning — Reason + Act loop for multi-step tasks",
+      "parentId": "agents",
+      "type": "leaf",
+      "color": "#22c55e"
+    },
+    {
+      "id": "agents-action-groups",
+      "label": "Action Groups — Lambda functions or OpenAPI schemas",
+      "parentId": "agents",
+      "type": "leaf",
+      "color": "#22c55e"
+    },
+    {
+      "id": "agents-kb-integration",
+      "label": "Knowledge Base Integration — Agents can query Knowledge Bases",
+      "parentId": "agents",
+      "type": "leaf",
+      "color": "#22c55e"
+    },
+    {
+      "id": "agents-memory",
+      "label": "Memory — Session context retention across turns",
+      "parentId": "agents",
+      "type": "leaf",
+      "color": "#22c55e"
+    },
+    {
+      "id": "guardrails",
+      "label": "Guardrails",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "gr-content-filter",
+      "label": "Content Filtering — Hate, violence, sexual, misconduct categories",
+      "parentId": "guardrails",
+      "type": "leaf",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "gr-pii",
+      "label": "PII Redaction — Detect and mask sensitive personal information",
+      "parentId": "guardrails",
+      "type": "leaf",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "gr-topic-denial",
+      "label": "Topic Denial — Block responses on specified topics",
+      "parentId": "guardrails",
+      "type": "leaf",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "gr-grounding",
+      "label": "Grounding Check — Verify response is grounded in source documents",
+      "parentId": "guardrails",
+      "type": "leaf",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "gr-word-filter",
+      "label": "Word Filter — Block specific words or phrases",
+      "parentId": "guardrails",
+      "type": "leaf",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "inference",
+      "label": "Inference & Pricing",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#ec4899"
+    },
+    {
+      "id": "inf-ondemand",
+      "label": "On-Demand — Pay per input/output token; no commitment",
+      "parentId": "inference",
+      "type": "leaf",
+      "color": "#ec4899"
+    },
+    {
+      "id": "inf-provisioned",
+      "label": "Provisioned Throughput — Reserved model units; hourly billing; consistent latency",
+      "parentId": "inference",
+      "type": "leaf",
+      "color": "#ec4899"
+    },
+    {
+      "id": "inf-crossregion",
+      "label": "Cross-Region Inference — Inference profiles for multi-region routing",
+      "parentId": "inference",
+      "type": "leaf",
+      "color": "#ec4899"
+    },
+    {
+      "id": "inf-batch",
+      "label": "Batch Inference — Asynchronous processing for large workloads",
+      "parentId": "inference",
+      "type": "leaf",
+      "color": "#ec4899"
+    },
+    {
+      "id": "security",
+      "label": "Security & Compliance",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#ef4444"
+    },
+    {
+      "id": "sec-iam",
+      "label": "IAM — Fine-grained access control for model invocation",
+      "parentId": "security",
+      "type": "leaf",
+      "color": "#ef4444"
+    },
+    {
+      "id": "sec-privatelink",
+      "label": "AWS PrivateLink — Private VPC endpoint; no public internet",
+      "parentId": "security",
+      "type": "leaf",
+      "color": "#ef4444"
+    },
+    {
+      "id": "sec-kms",
+      "label": "AWS KMS — Encryption at rest and in transit",
+      "parentId": "security",
+      "type": "leaf",
+      "color": "#ef4444"
+    },
+    {
+      "id": "sec-privacy",
+      "label": "Data Privacy — Customer data not used to train base models",
+      "parentId": "security",
+      "type": "leaf",
+      "color": "#ef4444"
+    },
+    {
+      "id": "sec-compliance",
+      "label": "Compliance — SOC 1/2/3, ISO 27001, HIPAA eligible, GDPR",
+      "parentId": "security",
+      "type": "leaf",
+      "color": "#ef4444"
+    },
+    {
+      "id": "evaluation",
+      "label": "Model Evaluation",
+      "parentId": "bedrock",
+      "type": "category",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "eval-automatic",
+      "label": "Automatic Metrics — BERTScore, ROUGE, METEOR, accuracy",
+      "parentId": "evaluation",
+      "type": "leaf",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "eval-human",
+      "label": "Human Evaluation — Reviewer workflows for subjective quality assessment",
+      "parentId": "evaluation",
+      "type": "leaf",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "eval-datasets",
+      "label": "Evaluation Datasets — Built-in or custom prompt datasets",
+      "parentId": "evaluation",
+      "type": "leaf",
+      "color": "#14b8a6"
+    }
+  ]
+}

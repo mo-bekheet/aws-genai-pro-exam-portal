@@ -1,0 +1,388 @@
+[
+  {
+    "id": "bedrock-001",
+    "domain": "bedrock",
+    "type": "concept",
+    "difficulty": "easy",
+    "front": {
+      "question": "What is Amazon Bedrock?",
+      "hint": "Think: managed service + multiple model providers + single API",
+      "emoji": "🟣"
+    },
+    "back": {
+      "answer": "A fully managed AWS service that provides access to foundation models (FMs) from multiple AI providers through a single API, enabling generative AI application development without infrastructure management.",
+      "key_points": [
+        "Managed service",
+        "Multiple AI providers (Anthropic, Meta, Mistral, Cohere, Amazon, Stability AI)",
+        "Single API access"
+      ],
+      "mnemonic": "B-R-O-C-K: Bedrock = Rested On Comprehensive Knowledge",
+      "analogy": "Like an app store for AI models - one place to access many providers"
+    },
+    "exam_tip": "Bedrock provides API access only - model weights are NOT accessible to customers",
+    "related_cards": ["bedrock-002", "bedrock-003"],
+    "tags": ["bedrock", "foundations"]
+  },
+  {
+    "id": "bedrock-002",
+    "domain": "bedrock",
+    "type": "concept",
+    "difficulty": "easy",
+    "front": {
+      "question": "Which foundation model providers are available in Amazon Bedrock?",
+      "hint": "Six providers — includes both open-weight and proprietary models",
+      "emoji": "📦"
+    },
+    "back": {
+      "answer": "Anthropic (Claude 3 - Haiku, Sonnet, Opus), Meta (Llama 3), Mistral (Mistral 7B, Mixtral 8x7B), Cohere (Command, Embed), Stability AI (Stable Diffusion), and Amazon (Titan Text, Titan Embeddings, Titan Image).",
+      "key_points": [
+        "Anthropic - Claude 3 family",
+        "Meta - Llama 3",
+        "Mistral - Mistral 7B, Mixtral",
+        "Cohere - Command, Embed",
+        "Stability AI - Image generation",
+        "Amazon - Titan family"
+      ],
+      "mnemonic": "A M M C S A: Anthropic, Meta, Mistral, Cohere, Stability, Amazon",
+      "analogy": "Like a restaurant with chefs from different cuisines - each specializes in different AI approaches"
+    },
+    "exam_tip": "Titan is AWS's own model family - always available and often cheaper",
+    "related_cards": ["bedrock-001"],
+    "tags": ["bedrock", "providers"]
+  },
+  {
+    "id": "bedrock-003",
+    "domain": "bedrock",
+    "type": "comparison",
+    "difficulty": "medium",
+    "front": {
+      "question": "What is the difference between fine-tuning and continued pre-training in Bedrock?",
+      "hint": "Labeled data = fine-tuning; Unlabeled domain data = continued pre-training",
+      "emoji": "⚖️"
+    },
+    "back": {
+      "answer": "Fine-tuning adapts a model to a specific task using labeled input-output pairs (JSONL). Continued pre-training adapts a model to a domain using large amounts of unlabeled text data.",
+      "key_points": [
+        "Fine-tuning: labeled JSONL data from S3",
+        "Continued pre-training: unlabeled domain corpus",
+        "Both update model weights",
+        "Fine-tuning = task-specific; Continued pre-training = domain adaptation"
+      ],
+      "mnemonic": "Fine-tune = Task; Continue Pre-train = Domain",
+      "analogy": "Fine-tuning is like training for a specific job; continued pre-training is like learning a new field"
+    },
+    "exam_tip": "The question asks about 'unlabeled clinical notes' - that's continued pre-training, not fine-tuning",
+    "related_cards": ["bedrock-001", "bedrock-004"],
+    "tags": ["bedrock", "customization", "fine-tuning"]
+  },
+  {
+    "id": "bedrock-004",
+    "domain": "bedrock",
+    "type": "concept",
+    "difficulty": "medium",
+    "front": {
+      "question": "What is Retrieval-Augmented Generation (RAG) in the context of Bedrock?",
+      "hint": "Retrieve → Augment prompt → Generate response",
+      "emoji": "🔍"
+    },
+    "back": {
+      "answer": "RAG retrieves relevant documents from a knowledge base at inference time and injects them into the model prompt, allowing the model to answer questions grounded in up-to-date or proprietary data without retraining.",
+      "key_points": [
+        "Retrieves relevant docs from knowledge base",
+        "Augments the prompt with retrieved context",
+        "Does NOT change model weights",
+        "Uses vector embeddings for semantic search"
+      ],
+      "mnemonic": "RAG = Retrieve And Generate",
+      "analogy": "Like having a knowledgeable assistant who can look up information in real-time"
+    },
+    "exam_tip": "RAG reduces hallucinations by grounding responses in your own data",
+    "related_cards": ["bedrock-005", "bedrock-006"],
+    "tags": ["bedrock", "rag", "knowledge-bases"]
+  },
+  {
+    "id": "bedrock-005",
+    "domain": "bedrock",
+    "type": "fact",
+    "difficulty": "medium",
+    "front": {
+      "question": "What vector stores does Amazon Bedrock Knowledge Bases support?",
+      "hint": "OpenSearch Serverless is the default AWS-native option",
+      "emoji": "🗄️"
+    },
+    "back": {
+      "answer": "Amazon OpenSearch Serverless, Amazon Aurora (pgvector), Pinecone, Redis Enterprise Cloud, and MongoDB Atlas.",
+      "key_points": [
+        "OpenSearch Serverless - default AWS option",
+        "Aurora PostgreSQL with pgvector",
+        "Pinecone - managed vector DB",
+        "Redis Enterprise Cloud",
+        "MongoDB Atlas"
+      ],
+      "mnemonic": "OPRPM: OpenSearch, Pinecone, Redis, pgvector (Aurora), MongoDB",
+      "analogy": "Different storage units for different needs - from AWS-native to specialized services"
+    },
+    "exam_tip": "OpenSearch Serverless is the default and most integrated option for AWS users",
+    "related_cards": ["bedrock-004"],
+    "tags": ["bedrock", "vector-store", "knowledge-bases"]
+  },
+  {
+    "id": "bedrock-006",
+    "domain": "bedrock",
+    "type": "concept",
+    "difficulty": "easy",
+    "front": {
+      "question": "What are Amazon Bedrock Guardrails?",
+      "hint": "Safety layer applied at invocation — works across all supported models",
+      "emoji": "🛡️"
+    },
+    "back": {
+      "answer": "A feature that applies content filtering, PII redaction, topic denial, word filters, and grounding checks to both model inputs and outputs, independent of the underlying model.",
+      "key_points": [
+        "Content filtering - hate, violence, sexual, misconduct",
+        "PII redaction - detect and mask sensitive info",
+        "Topic denial - block responses on specified topics",
+        "Word filter - block specific words/phrases",
+        "Grounding check - verify response is from source"
+      ],
+      "mnemonic": "Guardrails = Guard against unwanted outputs",
+      "analogy": "Like a content moderator that sits between user and model"
+    },
+    "exam_tip": "Guardrails work at API level - they don't require model-specific configuration",
+    "related_cards": ["bedrock-007"],
+    "tags": ["bedrock", "guardrails", "security"]
+  },
+  {
+    "id": "bedrock-007",
+    "domain": "bedrock",
+    "type": "comparison",
+    "difficulty": "medium",
+    "front": {
+      "question": "What is Provisioned Throughput in Amazon Bedrock?",
+      "hint": "Reserved capacity = predictable performance; on-demand = pay per token",
+      "emoji": "💰"
+    },
+    "back": {
+      "answer": "A billing option that reserves dedicated model capacity (model units) for a committed period, providing consistent throughput for high-volume, latency-sensitive workloads. Billed per model unit per hour regardless of usage.",
+      "key_points": [
+        "Reserved model units (MUs)",
+        "Hourly billing - committed period (1 or 6 months)",
+        "Consistent throughput and latency",
+        "Required for fine-tuned models",
+        "On-demand = pay per token, no commitment"
+      ],
+      "mnemonic": "Provisioned = Predictable Performance for Production",
+      "analogy": "Like reserving a table at a restaurant - guaranteed availability"
+    },
+    "exam_tip": "Fine-tuned models REQUIRE Provisioned Throughput - they cannot use On-Demand",
+    "related_cards": ["bedrock-003", "bedrock-008"],
+    "tags": ["bedrock", "inference", "pricing"]
+  },
+  {
+    "id": "bedrock-008",
+    "domain": "bedrock",
+    "type": "concept",
+    "difficulty": "medium",
+    "front": {
+      "question": "How do Amazon Bedrock Agents work?",
+      "hint": "ReAct = Reason + Act; action groups = Lambda or OpenAPI",
+      "emoji": "🤖"
+    },
+    "back": {
+      "answer": "Agents use ReAct-style reasoning to orchestrate multi-step tasks. They break down user requests, call action groups (Lambda functions or OpenAPI schemas), query knowledge bases, and synthesize final responses.",
+      "key_points": [
+        "ReAct reasoning - reason + act loop",
+        "Action groups = Lambda or OpenAPI schemas",
+        "Can query knowledge bases",
+        "Memory for session context",
+        "Multi-step task orchestration"
+      ],
+      "mnemonic": "Agent = Autonomous + Goal + Execution",
+      "analogy": "Like a smart assistant that can take real actions, not just answer questions"
+    },
+    "exam_tip": "Action groups use IAM roles - follow least privilege for security",
+    "related_cards": ["bedrock-004"],
+    "tags": ["bedrock", "agents", "orchestration"]
+  },
+  {
+    "id": "bedrock-009",
+    "domain": "bedrock",
+    "type": "fact",
+    "difficulty": "easy",
+    "front": {
+      "question": "What data format is required for Bedrock fine-tuning jobs?",
+      "hint": "One JSON object per line; stored in S3 before job creation",
+      "emoji": "📄"
+    },
+    "back": {
+      "answer": "JSONL (JSON Lines) format with labeled prompt-completion pairs, stored in Amazon S3.",
+      "key_points": [
+        "JSONL = one JSON object per line",
+        "Must be in S3 before creating job",
+        "Labeled prompt-completion pairs",
+        "Specific format per model type"
+      ],
+      "mnemonic": "JSONL = JSON Lines - one record per line",
+      "analogy": "Like a CSV but with nested JSON structure"
+    },
+    "exam_tip": "The data must be in S3 - you can't directly upload files to Bedrock",
+    "related_cards": ["bedrock-003"],
+    "tags": ["bedrock", "fine-tuning", "s3"]
+  },
+  {
+    "id": "bedrock-010",
+    "domain": "bedrock",
+    "type": "concept",
+    "difficulty": "medium",
+    "front": {
+      "question": "What is cross-region inference in Amazon Bedrock?",
+      "hint": "Inference profiles enable multi-region routing for resilience",
+      "emoji": "🌍"
+    },
+    "back": {
+      "answer": "A feature using inference profiles that routes model invocation requests across multiple AWS regions to improve availability and handle traffic spikes, at the cost of potentially higher latency.",
+      "key_points": [
+        "Uses inference profiles",
+        "Multi-region routing",
+        "Improved availability",
+        "Handles traffic spikes",
+        "Potentially higher latency"
+      ],
+      "mnemonic": "Cross-region = Cross-border traffic routing",
+      "analogy": "Like having multiple checkout lanes - if one is busy, use another"
+    },
+    "exam_tip": "Cross-region inference helps with availability but adds latency",
+    "related_cards": ["bedrock-007"],
+    "tags": ["bedrock", "inference", "availability"]
+  },
+  {
+    "id": "bedrock-011",
+    "domain": "bedrock",
+    "type": "fact",
+    "difficulty": "easy",
+    "front": {
+      "question": "Does Amazon Bedrock expose model weights to customers?",
+      "hint": "Managed API access only — contrast with SageMaker JumpStart",
+      "emoji": "🔐"
+    },
+    "back": {
+      "answer": "No. Bedrock provides API-based access only. Model weights are not accessible, downloadable, or self-hostable.",
+      "key_points": [
+        "API access only",
+        "No weight access",
+        "No downloading",
+        "Not self-hostable",
+        "Contrast with SageMaker JumpStart"
+      ],
+      "mnemonic": "Bedrock = Bedrock - solid, fixed foundation you can't modify",
+      "analogy": "Like renting a car - you drive it, you don't have the keys to the engine"
+    },
+    "exam_tip": "This is different from SageMaker JumpStart where some models allow weight access",
+    "related_cards": ["bedrock-001"],
+    "tags": ["bedrock", "security", "architecture"]
+  },
+  {
+    "id": "bedrock-012",
+    "domain": "bedrock",
+    "type": "concept",
+    "difficulty": "medium",
+    "front": {
+      "question": "What chunking strategies are available in Bedrock Knowledge Bases?",
+      "hint": "Chunking strategy impacts retrieval quality and token cost",
+      "emoji": "✂️"
+    },
+    "back": {
+      "answer": "Fixed-size chunking, semantic chunking, and hierarchical chunking. Each affects retrieval precision and context window usage differently.",
+      "key_points": [
+        "Fixed-size - predetermined character/word count",
+        "Semantic - based on meaning boundaries",
+        "Hierarchical - multi-level structure",
+        "Impacts retrieval quality",
+        "Affects token cost"
+      ],
+      "mnemonic": "FSH: Fixed, Semantic, Hierarchical",
+      "analogy": "Like cutting a book - by pages, by chapters, or by topics"
+    },
+    "exam_tip": "Test different chunking strategies with your specific data - no one-size-fits-all",
+    "related_cards": ["bedrock-004", "bedrock-005"],
+    "tags": ["bedrock", "knowledge-bases", "chunking"]
+  },
+  {
+    "id": "bedrock-013",
+    "domain": "bedrock",
+    "type": "fact",
+    "difficulty": "medium",
+    "front": {
+      "question": "What metrics does Bedrock Model Evaluation support?",
+      "hint": "Both automated scoring and human-in-the-loop evaluation are supported",
+      "emoji": "📊"
+    },
+    "back": {
+      "answer": "Automatic metrics (BERTScore, ROUGE, METEOR, accuracy) and human evaluation workflows where reviewers rate model outputs.",
+      "key_points": [
+        "BERTScore - semantic similarity",
+        "ROUGE - n-gram overlap",
+        "METEOR - language quality",
+        "Accuracy - exact match",
+        "Human evaluation workflows"
+      ],
+      "mnemonic": "BRMA: BERTScore, ROUGE, METEOR, Accuracy",
+      "analogy": "Like having both automated tests and manual QA"
+    },
+    "exam_tip": "Use human evaluation for subjective quality - automated for objective metrics",
+    "related_cards": [],
+    "tags": ["bedrock", "evaluation", "metrics"]
+  },
+  {
+    "id": "bedrock-014",
+    "domain": "bedrock",
+    "type": "fact",
+    "difficulty": "easy",
+    "front": {
+      "question": "How does Bedrock ensure data privacy?",
+      "hint": "No data used for training + PrivateLink for network isolation",
+      "emoji": "🔒"
+    },
+    "back": {
+      "answer": "Customer data is not used to train or improve base models. Models run within AWS infrastructure, and VPC endpoints via AWS PrivateLink prevent data from traversing the public internet.",
+      "key_points": [
+        "Customer data NOT used for training",
+        "AWS infrastructure",
+        "AWS PrivateLink for VPC access",
+        "No public internet exposure",
+        "Encryption at rest and in transit"
+      ],
+      "mnemonic": "Privacy = Private + Link",
+      "analogy": "Like a secure tunnel - data goes straight to the model without exposure"
+    },
+    "exam_tip": "This is a key differentiator - AWS doesn't use your data to improve their models",
+    "related_cards": ["bedrock-011"],
+    "tags": ["bedrock", "privacy", "security"]
+  },
+  {
+    "id": "bedrock-015",
+    "domain": "bedrock",
+    "type": "fact",
+    "difficulty": "medium",
+    "front": {
+      "question": "What AWS service is used for logging and monitoring Bedrock invocations?",
+      "hint": "CloudWatch metrics + optional invocation logging to S3 or CW Logs",
+      "emoji": "📝"
+    },
+    "back": {
+      "answer": "Amazon CloudWatch for metrics and logs. Model invocation logging can be enabled to capture request/response payloads in S3 or CloudWatch Logs.",
+      "key_points": [
+        "CloudWatch metrics",
+        "CloudWatch Logs",
+        "Optional invocation logging",
+        "Store in S3 or CloudWatch",
+        "Capture request/response payloads"
+      ],
+      "mnemonic": "CW: CloudWatch - watch everything",
+      "analogy": "Like having a security camera for your API calls"
+    },
+    "exam_tip": "Enable invocation logging for debugging and compliance - but watch storage costs",
+    "related_cards": [],
+    "tags": ["bedrock", "monitoring", "logging"]
+  }
+]
